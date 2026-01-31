@@ -1,0 +1,20 @@
+.body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    height: 100vh;
+    /* Fixed height */
+    overflow: hidden;
+    /* Prevent body scroll */
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContent {
+    flex: 1;
+    overflow-y: auto;
+    /* Scroll only here */
+    scrollbar-gutter: stable;
+    /* Prevent layout shift */
+    position: relative;
+    width: 100%;
+}

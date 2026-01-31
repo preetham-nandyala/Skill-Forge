@@ -1,0 +1,65 @@
+.pageContainer {}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.search {
+    width: 300px;
+}
+
+.table {
+    padding: 0;
+}
+
+.tableHeader {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-light);
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.tableRow {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-light);
+    align-items: center;
+}
+
+.userCell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.roleTag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.deleteBtn {
+    color: #ef4444;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}

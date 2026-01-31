@@ -1,0 +1,253 @@
+/* Global Admin Design System - SCSS Enhanced */
+
+// Variables
+:root {
+    --bg-primary: #0f0f12; // Slightly darker/different than user app for distinction
+    --bg-secondary: #18181b;
+    --bg-card: rgba(24, 24, 27, 0.7);
+    --bg-sidebar: #09090b;
+
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+
+    --accent-primary: #8b5cf6; // Violet for Admin
+    --accent-glow: rgba(139, 92, 246, 0.4);
+    --accent-secondary: #ec4899;
+
+    --border-light: rgba(255, 255, 255, 0.08);
+    --radius-md: 12px;
+    --radius-sm: 8px;
+
+    --font-main: var(--font-inter);
+    --font-display: var(--font-outfit);
+
+    --transition-smooth: 0.3s ease-out;
+}
+
+@mixin card-base {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(12px);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-main), sans-serif;
+    // Subtle hex grid pattern
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+// Global Scrollbar
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 3px;
+
+    &:hover {
+        background: var(--accent-primary);
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: #fff;
+}
+
+// --- Admin Utilities & Polyfills ---
+
+.glass-panel {
+    @include card-base;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: border-color 0.2s;
+
+    &:hover {
+        border-color: rgba(139, 92, 246, 0.3);
+    }
+}
+
+// Button Styles
+button {
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.bg-purple-600 {
+    /* Primary Action */
+    background: var(--accent-primary);
+    color: white;
+
+    &:hover {
+        background: #a78bfa;
+        box-shadow: 0 0 15px var(--accent-glow);
+    }
+}
+
+.bg-red-500 {
+    background: #ef4444;
+
+    &:hover {
+        background: #dc2626;
+    }
+}
+
+// Tailwind Polyfills (SCSS)
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {
+    grid-template-columns: 1fr;
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+// Colors - mapped to variables where possible
+.bg-gray-900 {
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border-light);
+}
+
+.bg-gray-800 {
+    @include card-base;
+}
+
+.bg-gray-800\/50 {
+    background: rgba(24, 24, 27, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-light);
+}
+
+.text-gray-400 {
+    color: var(--text-secondary);
+}
+
+.text-gray-500 {
+    color: var(--text-muted);
+}
+
+.border-gray-700 {
+    border-color: var(--border-light);
+}
+
+// Spacing
+.p-4 {
+    padding: 1rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+// Modals/Overlays
+.fixed {
+    position: fixed;
+}
+
+.inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.bg-black\/50 {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.z-50 {
+    z-index: 50;
+}
+
+// Inputs
+input,
+textarea,
+select {
+    background: #18181b;
+    border: 1px solid #27272a;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &:focus {
+        border-color: var(--accent-primary);
+        box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+    }
+}

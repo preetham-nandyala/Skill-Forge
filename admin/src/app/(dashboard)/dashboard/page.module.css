@@ -1,0 +1,32 @@
+.pageContainer {}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.statCard {
+    padding: 24px;
+}
+
+.statTitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.statValue {
+    font-size: 2.5rem;
+    font-weight: 700;
+}

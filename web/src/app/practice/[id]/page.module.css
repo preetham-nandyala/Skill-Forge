@@ -1,0 +1,243 @@
+/* Workspace Layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+    /* Adjust based on navbar height */
+    background-color: var(--bg-primary);
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    height: 60px;
+    padding: 0 1rem;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.titleSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.difficulty {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.difficultyEasy {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.difficultyMedium {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.difficultyHard {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.languageSelect {
+    background-color: var(--bg-glass);
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.languageSelect:hover {
+    border-color: var(--text-secondary);
+}
+
+.runBtn {
+    background-color: var(--bg-glass);
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.runBtn:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.submitBtn {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--accent-glow);
+    transition: all 0.2s ease;
+}
+
+.submitBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Main Workspace */
+.workspace {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    flex-direction: column;
+    /* Mobile first: stack vertically */
+}
+
+/* Problem Description Panel */
+.leftPanel {
+    flex: 1;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-light);
+    overflow-y: auto;
+    padding: 1.5rem;
+}
+
+/* Make custom scrollbar for panels */
+.leftPanel::-webkit-scrollbar,
+.consoleContent::-webkit-scrollbar {
+    width: 8px;
+}
+
+.leftPanel::-webkit-scrollbar-thumb,
+.consoleContent::-webkit-scrollbar-thumb {
+    background-color: var(--border-light);
+    border-radius: 4px;
+}
+
+.description {
+    line-height: 1.7;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    white-space: pre-wrap;
+}
+
+.example {
+    background-color: var(--bg-card);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    margin-top: 1rem;
+    border: 1px solid var(--border-light);
+}
+
+.exampleTitle {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.codeBlock {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    color: var(--text-primary);
+}
+
+/* Editor & Console Panel */
+.rightPanel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    /* Match Editor BG usually */
+    overflow: hidden;
+}
+
+.editorContainer {
+    flex: 2;
+    /* Takes more space than console */
+    position: relative;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.consoleContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-secondary);
+    min-height: 200px;
+}
+
+.consoleHeader {
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.consoleContent {
+    flex: 1;
+    padding: 1rem;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    overflow-y: auto;
+    white-space: pre-wrap;
+    background-color: #0d0d0d;
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+    .workspace {
+        flex-direction: row;
+    }
+
+    .leftPanel {
+        width: 45%;
+        flex: none;
+        /* Fixed width initially or flex-basis */
+        border-bottom: none;
+        border-right: 1px solid var(--border-light);
+    }
+
+    .rightPanel {
+        flex: 1;
+    }
+}

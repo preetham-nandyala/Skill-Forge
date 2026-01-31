@@ -1,0 +1,256 @@
+.nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+
+    background: rgba(10, 10, 13, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.logoLink {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logoText {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Navigation Links */
+.navLinks {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navLink {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+}
+
+.navLink:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.adminLink {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* User Actions */
+.userActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Profile Dropdown */
+.profileBtn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profileBtn:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdownMenu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 12px;
+    width: 240px;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    z-index: 1005;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdownHeader {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 8px;
+}
+
+.dropdownName {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.dropdownEmail {
+    font-size: 0.75rem;
+    color: #a1a1aa;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    color: #d4d4d8;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdownItem:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.logoutItem {
+    color: #f87171;
+}
+
+.logoutItem:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+}
+
+.loginBtn,
+.registerBtn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.loginBtn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+}
+
+.loginBtn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.registerBtn {
+    background: white;
+    color: black;
+    font-weight: 600;
+    border: none;
+}
+
+.registerBtn:hover {
+    background: #e5e5e5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav {
+        padding: 0 16px;
+    }
+
+    .navLinks {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 13, 1);
+        /* Solid dark for contrast */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 12px 0;
+        justify-content: space-evenly;
+        transform: none;
+        /* Reset desktop centering */
+        z-index: 1000;
+    }
+
+    .navLink {
+        flex-direction: column;
+        gap: 4px;
+        font-size: 0.7rem;
+        padding: 4px;
+    }
+
+    .navLink span {
+        font-size: 1.25rem;
+        /* Make icons larger */
+    }
+
+    .userActions {
+        margin-left: auto;
+    }
+
+    .adminLink {
+        display: none;
+        /* Hide admin link on mobile bottom bar to save space */
+    }
+}

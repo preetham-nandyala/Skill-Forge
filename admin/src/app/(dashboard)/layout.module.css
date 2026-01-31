@@ -1,0 +1,74 @@
+.verificationLoading {
+    padding: 40px;
+}
+
+.layoutContainer {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    border-radius: 0;
+    border-right: 1px solid var(--border-light);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 50;
+}
+
+.title {
+    padding: 0 16px;
+    margin-bottom: 24px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.menuList {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menuItemLink {
+    text-decoration: none;
+}
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.menuItemName {
+    font-weight: 500;
+}
+
+.logoutBtn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: #ef4444;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.mainContent {
+    margin-left: 260px;
+    width: 100%;
+    padding: 40px;
+}
